@@ -1,6 +1,6 @@
 <h1 align="center">BMI CALCULATOR</h1>
 
-<p align="center">A Simple bmi calculator which calculates the bmi of a person with the entered values and displays the persons' bmi along with his health status.The person can review and edit his entered data calculate his bmi again for future</p>
+<p align="center">A Simple bmi calculator which calculates the bmi of a person with the entered values and displays the persons' bmi along with his health status.The person can review and edit his entered data calculate his bmi again for future.make sure that python is installed -> make sure that oracle is install in your system or install oracle latest version -> create table bmi for the code to work</p>
 
 ## Links
 
@@ -21,6 +21,7 @@ You will also see any lint errors in the console.
 
 - Python
 - Flask
+- Oracle
 - HTML
 - CSS
 
