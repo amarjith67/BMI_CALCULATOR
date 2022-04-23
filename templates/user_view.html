@@ -35,10 +35,10 @@
           <p class="disp_font">AGE : {{ item[2] }}</p>
           <p class="disp_font">WEIGHT : {{ item[3] }}</p>
           <p class="disp_font">HEIGHT : {{ item[4] }}</p>
+          <p class="disp_font">BMI : {{ item[5] }}</p>
         </div>
 
         {% endfor %}
-        <p class="disp_font">BMI : {{ bmi }}</p>
         <a href="{{ url_for('home') }}" class="update">Home</a>
         <a href="{{ url_for('update_user') }}" class="update">update</a>
       </div>

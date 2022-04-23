@@ -36,8 +36,8 @@ def view():
     if(request.method=='POST'):
         user_id = request.form.get('id')
         name = request.form.get('name')
-        data,bmi=db.view_data(user_id,name)
-    return render_template('user_view.html',data=data,bmi=bmi)
+        data=db.view_data(user_id,name)
+    return render_template('user_view.html',data=data)
 
 @app.route("/update_user")
 def update_user():

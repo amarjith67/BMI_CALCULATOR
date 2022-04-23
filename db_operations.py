@@ -7,9 +7,9 @@ class bmi_db:
         print("connected")
         
     def insert_data(self,user_id,name,age,height,weight):
-        self.cursor.execute(f"INSERT INTO BMI VALUES({user_id},'{name}',{age},{height},{weight},NULL)")  
+        self.cursor.execute(f"INSERT INTO BMI VALUES({user_id},'{name}',{age},{weight},{height},NULL)")  
         self.bmi=(float(weight)/(float(height)*float(height)))*10000
-        self.cursor.execute(f"UPDATE BMI SET BMI_VAL={self.bmi}")
+        self.cursor.execute(f"UPDATE BMI SET BMI_VAL={self.bmi} WHERE ID={user_id}")
         if(self.bmi<18.5):
             self.message="Underweight"
         elif self.bmi >= 18.5 and self.bmi <= 24.9 :
@@ -24,11 +24,11 @@ class bmi_db:
     def view_data(self,user_id,name):
         self.data=self.cursor.execute(f"SELECT * FROM BMI WHERE ID={user_id} AND NAME='{name}'")    
         self.conn.commit()
-        return self.cursor,self.bmi
+        return self.cursor
     
     def update_data(self,user_id,name,age,height,weight):
         self.bmi=(float(weight)/(float(height)*float(height)))*10000
-        self.cursor.execute(f"UPDATE BMI SET NAME='{name}',AGE={age},HEIGHT={height},WEIGHT={weight},BMI_VAL={self.bmi} WHERE  ID={user_id}")
+        self.cursor.execute(f"UPDATE BMI SET NAME='{name}',AGE={age},WEIGHT={weight},HEIGHT={height},BMI_VAL={self.bmi} WHERE  ID={user_id}")
         self.conn.commit()
         return self.cursor
         
